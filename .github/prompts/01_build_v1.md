@@ -10,4 +10,4 @@ Use:
 - #file:.context/copy/nav.yml (if present)
 
 Tasks:
-- Based on your context above, create/overwrite .html pages (based on the structure of the brief) to create/update the first version of this website
+- Based on your context above, create/overwrite pages (based on the structure of the brief) to create/update the first version of this website
