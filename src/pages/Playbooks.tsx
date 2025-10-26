@@ -10,11 +10,11 @@ export function Playbooks() {
       <div className="container px-4">
         <div className="max-w-6xl mx-auto space-y-12">
           {/* Header */}
-          <div className="text-center space-y-4">
-            <h1 className="text-5xl md:text-6xl font-bold text-white">
+          <div className="text-center space-y-4 animate-fade-in-up">
+            <h1 className="text-5xl md:text-6xl font-bold text-white text-glow">
               AI Playbooks
             </h1>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Choose your Playbook and get instant access to expert-built GPT assistants
             </p>
           </div>
@@ -24,29 +24,30 @@ export function Playbooks() {
             {playbooks.map((playbook) => (
               <Card 
                 key={playbook.id} 
-                className="hover:shadow-2xl transition-all duration-300 border-2 hover:border-[#0B0F14] hover:scale-105"
+                className="hover-lift hover:shadow-2xl transition-all duration-300 border-2 hover:scale-105 group cursor-pointer"
+                style={{ borderColor: playbook.color }}
               >
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-5xl">{playbook.icon}</span>
+                    <span className="text-5xl transition-transform duration-300 group-hover:scale-110 group-hover:animate-float">{playbook.icon}</span>
                     <span 
-                      className="px-3 py-1 rounded-full text-sm font-semibold"
+                      className="px-3 py-1 rounded-full text-sm font-semibold transition-all duration-300 group-hover:shadow-lg"
                       style={{ backgroundColor: `${playbook.color}20`, color: playbook.color }}
                     >
                       {playbook.category}
                     </span>
                   </div>
-                  <CardTitle className="text-2xl">{playbook.title}</CardTitle>
-                  <CardDescription className="text-base">
+                  <CardTitle className="text-2xl text-white">{playbook.title}</CardTitle>
+                  <CardDescription className="text-base text-gray-300">
                     {playbook.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
-                    <p className="text-sm font-semibold text-[#0B0F14]">Includes {playbook.gpts.length} GPTs:</p>
+                    <p className="text-sm font-semibold text-gray-200">Includes {playbook.gpts.length} GPTs:</p>
                     <ul className="space-y-2">
                       {playbook.gpts.map((gpt, index) => (
-                        <li key={index} className="text-sm text-gray-400 flex items-start">
+                        <li key={index} className="text-sm text-gray-300 flex items-start">
                           <CheckCircle className="h-4 w-4 mr-2 mt-0.5 flex-shrink-0" style={{ color: playbook.color }} />
                           <span>{gpt.name}</span>
                         </li>
@@ -57,14 +58,14 @@ export function Playbooks() {
                 <CardFooter className="flex flex-col gap-3">
                   <div className="w-full flex items-center justify-between border-t pt-4">
                     <div>
-                      <p className="text-sm text-gray-400">Price</p>
-                      <span className="text-3xl font-bold text-[#0B0F14]">${playbook.price}</span>
+                      <p className="text-sm text-gray-300">Price</p>
+                      <span className="text-3xl font-bold text-white">${playbook.price}</span>
                     </div>
                   </div>
                   <div className="w-full flex flex-col sm:flex-row gap-2">
                     <Button 
                       asChild 
-                      className="flex-1"
+                      className="flex-1 font-semibold shadow-lg hover:shadow-xl"
                       style={{ backgroundColor: playbook.color, color: '#0B0F14' }}
                     >
                       <Link to={`/playbook/${playbook.slug}`}>
@@ -73,7 +74,7 @@ export function Playbooks() {
                     </Button>
                     <Button 
                       variant="outline" 
-                      className="flex-1 border-2"
+                      className="flex-1 border-2 font-semibold hover:shadow-lg transition-all duration-300"
                       style={{ borderColor: playbook.color, color: playbook.color }}
                     >
                       <ShoppingCart className="h-4 w-4 mr-2" />
@@ -86,14 +87,14 @@ export function Playbooks() {
           </div>
 
           {/* Bundle Offer */}
-          <div className="mt-16 bg-gradient-to-r from-gold/20 to-orange/20 rounded-2xl p-8 text-center">
-            <h2 className="text-3xl font-bold text-[#0B0F14] mb-4">
+          <div className="mt-16 bg-gradient-to-r from-gold/20 via-orange/20 to-gold/20 rounded-2xl p-8 text-center shadow-2xl border-2 border-gold/30 gradient-animate hover:glow-gold transition-all duration-500">
+            <h2 className="text-3xl font-bold text-white mb-4 text-glow">
               Save with Bundles
             </h2>
-            <p className="text-lg text-gray-300 mb-6">
+            <p className="text-lg text-gray-200 mb-6">
               Buy multiple Playbooks and save big with our bundle offers
             </p>
-            <Button asChild size="lg" className="bg-[#0B0F14] text-white hover:bg-[#0B0F14]/90">
+            <Button asChild size="lg" className="bg-[#0B0F14] text-white hover:bg-[#0B0F14]/90 hover:glow-gold shadow-lg font-semibold">
               <Link to="/pricing">
                 View Bundle Pricing
               </Link>
@@ -101,9 +102,9 @@ export function Playbooks() {
           </div>
 
           {/* Disclaimer */}
-          <div className="text-center text-sm text-gray-400 bg-[#0B0F14] rounded-lg p-6 border border-gray-800">
+          <div className="text-center text-sm text-gray-300 bg-[#0B0F14] rounded-lg p-6 border border-gray-700 shadow-lg">
             <p>
-              <strong>Note:</strong> Some GPTs may require ChatGPT Plus for full performance. 
+              <strong className="text-gray-200">Note:</strong> Some GPTs may require ChatGPT Plus for full performance. 
               Most features work with the free version of ChatGPT.
             </p>
           </div>
