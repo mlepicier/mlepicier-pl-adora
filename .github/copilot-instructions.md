@@ -1,184 +1,458 @@
 # Overview
 
-You are assisting in building static websites using Vanilla HTML5 with a modern enhancement stack.
-Your goal is to write clean, semantic, production-ready front-end code.
-The stack is: **Semantic HTML5 + Tailwind CSS + Alpine.js + AOS + Heroicons**.
-Do not include template syntax (no JSX, no Liquid, no Vue).
-Do not use heavy frameworks or build processes — all libraries are CDN-ready.
-Each page should be fully responsive, accessible, and lightweight.
+You are assisting in building modern web applications using React with TypeScript and a production-ready component stack.
+Your goal is to write clean, type-safe, maintainable, and production-ready front-end code.
+The stack is: **Vite + TypeScript + React + shadcn-ui + Tailwind CSS**.
+All code must use TypeScript with proper type annotations and interfaces.
+Use React functional components with hooks for state management.
+Leverage shadcn-ui components for consistent, accessible UI elements.
+Each component should be fully responsive, accessible, and performant.
 
 ## General Style Guide
 
-**Semantic HTML first** — layout and structure must remain clean and accessible.
-Use Tailwind CSS utility classes for spacing, typography, colors, hover/focus states.
-Introduce Alpine.js only for interactivity that cannot be handled with CSS alone (modals, toggles, dynamic forms).
-Use AOS (Animate On Scroll) for scroll-triggered animations; fallback to Tailwind transitions for simple hover/appear effects.
-Use Heroicons exclusively for all icon needs to maintain visual consistency.
-Always use semantic HTML5 tags (header, nav, main, section, article, footer).
-Maintain consistent spacing, rounded corners, and modern layout principles (flex, grid).
-Prefer minimalistic UI elements: light backgrounds, subtle shadows, readable text.
-Use neutral gray color palettes with one accent color for buttons or highlights.
-Ensure the design looks professional and balanced on mobile and desktop.
+**TypeScript first** — all code must include proper type definitions and interfaces.
+Use React functional components with TypeScript for all UI development.
+Leverage shadcn-ui components for buttons, forms, dialogs, cards, and other UI elements.
+Use Tailwind CSS utility classes for custom styling, spacing, typography, colors, hover/focus states.
+Implement React hooks (useState, useEffect, useCallback, useMemo, useContext) for state and side effects.
+Use Lucide React icons exclusively for all icon needs to maintain visual consistency.
+Always follow React best practices: component composition, props typing, proper key usage.
+Maintain consistent spacing, rounded corners, and modern layout principles (flexbox, grid).
+Prefer clean, minimalistic UI: light backgrounds, subtle shadows, readable typography.
+Use neutral color palettes with accent colors for interactive elements.
+Ensure the design is fully responsive and accessible on all devices.
+Keep components small, focused, and reusable.
 
 ## File Structure
 
-index.html → main landing page
-about.html, services.html, contact.html → optional pages if needed
-/assets/images → static images (use responsive variants: image-480.jpg, image-960.jpg, image-1920.jpg)
-/assets/css → Tailwind CSS file (via CDN)
-No build process required — all dependencies loaded via CDN.
+```
+src/
+  ├── components/      → Reusable React components
+  │   ├── ui/         → shadcn-ui components
+  │   └── layout/     → Layout components (Header, Footer, etc.)
+  ├── pages/          → Page components or views
+  ├── hooks/          → Custom React hooks
+  ├── lib/            → Utility functions and helpers
+  ├── types/          → TypeScript type definitions and interfaces
+  ├── assets/         → Static assets (images, fonts)
+  └── App.tsx         → Root application component
+public/               → Public static files
+vite.config.ts        → Vite configuration
+tsconfig.json         → TypeScript configuration
+tailwind.config.js    → Tailwind CSS configuration
+components.json       → shadcn-ui configuration
+```
 
 ## Coding Guidelines
 
-When generating HTML:
+When generating React components:
 
-Start with a minimal boilerplate using <!DOCTYPE html>.
-Include <meta name="viewport" content="width=device-width, initial-scale=1.0">.
-Load required CDN libraries in the <head>:
-  - Google Fonts API for typography
-  - Tailwind CSS
-  - Heroicons (if icons are needed)
-  - AOS CSS
-Load Alpine.js and AOS JavaScript before closing </body>.
-Use <title> that matches the project name.
-Comment key layout sections for readability.
+Always use TypeScript with proper type annotations.
+Use functional components with React hooks (no class components).
+Define prop interfaces with descriptive names (e.g., `ButtonProps`, `CardProps`).
+Export components as default or named exports based on usage.
+Use shadcn-ui components from `@/components/ui` for common UI elements.
+Apply Tailwind CSS utility classes using the `className` prop.
+Use `cn()` utility from `@/lib/utils` for conditional class names.
+Implement proper error boundaries and loading states.
+Follow React naming conventions: PascalCase for components, camelCase for functions/variables.
+Keep components focused on a single responsibility.
+Use composition over prop drilling; leverage React Context when needed.
+
+### Component Best Practices
+
+Structure components with clear sections:
+  1. Imports (React, types, components, utilities)
+  2. Type definitions (interfaces, types)
+  3. Component definition
+  4. Internal logic (hooks, handlers)
+  5. Return JSX
+
+Example component structure:
+```tsx
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { cn } from '@/lib/utils';
+
+interface ExampleProps {
+  title: string;
+  onAction?: () => void;
+  className?: string;
+}
+
+export function Example({ title, onAction, className }: ExampleProps) {
+  const [isActive, setIsActive] = useState(false);
+
+  const handleClick = () => {
+    setIsActive(!isActive);
+    onAction?.();
+  };
+
+  return (
+    <Card className={cn("w-full", className)}>
+      <CardHeader>
+        <CardTitle>{title}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <Button onClick={handleClick} variant={isActive ? "default" : "outline"}>
+          {isActive ? "Active" : "Inactive"}
+        </Button>
+      </CardContent>
+    </Card>
+  );
+}
+```
 
 ### Image Best Practices
 
-Always use lazy loading: <img loading="lazy" ...>
-Use responsive images with srcset and sizes:
-  <img src="hero.jpg" srcset="hero-480.jpg 480w, hero-960.jpg 960w, hero-1920.jpg 1920w" 
-       sizes="(max-width: 600px) 480px, (max-width: 1200px) 960px, 1920px" 
-       alt="Descriptive text" loading="lazy">
-Provide meaningful alt text for accessibility.
+Always use optimized image formats (WebP with fallbacks).
+Use responsive images with proper sizing attributes.
+Implement lazy loading with React lazy loading techniques.
+Store images in `/public/images` or import them as modules.
+Use descriptive alt text for accessibility.
+
+Example:
+```tsx
+<img 
+  src="/images/hero.webp" 
+  alt="Descriptive text" 
+  className="w-full h-auto rounded-lg"
+  loading="lazy"
+/>
+```
 
 ### Interactivity Guidelines
 
-**CSS-first approach**: Use Tailwind utilities for hover, focus, group-hover, transitions.
-**Alpine.js**: Only for dynamic behavior (dropdowns, modals, tabs, accordions, form validation).
-  - Use x-data, x-show, x-if, x-on:click, x-transition sparingly.
-**AOS**: For scroll animations — add data-aos="fade-up" or similar.
-**Heroicons**: Use inline SVG icons from Heroicons for consistency.
+**React hooks for state**: Use `useState`, `useReducer` for component state management.
+**Side effects**: Use `useEffect` for data fetching, subscriptions, DOM manipulation.
+**Performance**: Use `useMemo`, `useCallback` to optimize expensive computations and callbacks.
+**Form handling**: Use controlled components or libraries like React Hook Form with Zod validation.
+**shadcn-ui components**: Leverage pre-built components (Button, Dialog, Form, Select, etc.).
+  - Import from `@/components/ui/*`
+  - Customize with Tailwind classes and variant props
+**Lucide React**: Use icons from `lucide-react` package for consistency.
+**Animations**: Use Tailwind transitions and transforms; consider framer-motion for complex animations.
 
-Example layout structure (unformatted):
+Example with hooks and shadcn-ui:
+```tsx
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Search } from 'lucide-react';
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Company Name</title>
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.0/dist/tailwind.min.css" rel="stylesheet">
-  
-  <!-- AOS CSS -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-  </style>
-</head>
-<body class="antialiased text-gray-800 bg-gray-50">
-  
-  <!-- Header -->
-  <header class="py-6 shadow-md bg-white">
-    <div class="container mx-auto flex justify-between items-center px-4" x-data="{ mobileMenuOpen: false }">
-      <h1 class="text-2xl font-bold">Company Name</h1>
-      
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:flex space-x-4 text-sm font-medium">
-        <a href="index.html" class="hover:text-blue-600 transition">Home</a>
-        <a href="about.html" class="hover:text-blue-600 transition">About</a>
-        <a href="services.html" class="hover:text-blue-600 transition">Services</a>
-        <a href="contact.html" class="hover:text-blue-600 transition">Contact</a>
-      </nav>
-      
-      <!-- Mobile Menu Button -->
-      <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-      
-      <!-- Mobile Menu -->
-      <div x-show="mobileMenuOpen" x-transition class="absolute top-16 left-0 right-0 bg-white shadow-lg md:hidden">
-        <nav class="flex flex-col p-4 space-y-2">
-          <a href="index.html" class="hover:text-blue-600 transition">Home</a>
-          <a href="about.html" class="hover:text-blue-600 transition">About</a>
-          <a href="services.html" class="hover:text-blue-600 transition">Services</a>
-          <a href="contact.html" class="hover:text-blue-600 transition">Contact</a>
-        </nav>
-      </div>
+export function SearchDialog() {
+  const [query, setQuery] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleSearch = () => {
+    console.log('Searching for:', query);
+    setIsOpen(false);
+  };
+
+  return (
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <DialogTrigger asChild>
+        <Button variant="outline" size="icon">
+          <Search className="h-4 w-4" />
+        </Button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Search</DialogTitle>
+        </DialogHeader>
+        <div className="space-y-4">
+          <div>
+            <Label htmlFor="search">Search query</Label>
+            <Input
+              id="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Type to search..."
+            />
+          </div>
+          <Button onClick={handleSearch} className="w-full">
+            Search
+          </Button>
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+}
+```
+
+### TypeScript Guidelines
+
+**Always define types**: Create interfaces for props, state, and data structures.
+**Use type inference**: Let TypeScript infer types when obvious (e.g., `const count = 0`).
+**Avoid `any`**: Use `unknown` or proper types instead of `any`.
+**Utility types**: Leverage TypeScript utility types (Partial, Pick, Omit, Record, etc.).
+**Generic types**: Use generics for reusable, type-safe components and functions.
+
+Example TypeScript patterns:
+```tsx
+// Props interface
+interface UserCardProps {
+  user: {
+    id: string;
+    name: string;
+    email: string;
+  };
+  onEdit?: (id: string) => void;
+  className?: string;
+}
+
+// Type for component state
+type FormState = {
+  isSubmitting: boolean;
+  errors: Record<string, string>;
+};
+
+// Generic type example
+interface ApiResponse<T> {
+  data: T;
+  status: number;
+  message: string;
+}
+
+// Using utility types
+type UserUpdate = Partial<Pick<User, 'name' | 'email'>>;
+```
+
+### Example App Structure
+
+```tsx
+// src/App.tsx
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Layout } from '@/components/layout/Layout';
+import { Home } from '@/pages/Home';
+import { About } from '@/pages/About';
+import { Contact } from '@/pages/Contact';
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
+```
+
+```tsx
+// src/components/layout/Layout.tsx
+import { Outlet } from 'react-router-dom';
+import { Header } from './Header';
+import { Footer } from './Footer';
+
+export function Layout() {
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1">
+        <Outlet />
+      </main>
+      <Footer />
     </div>
-  </header>
+  );
+}
+```
 
-  <!-- Main Content -->
-  <main class="py-16 px-4">
-    <!-- Hero Section with AOS -->
-    <section class="container mx-auto text-center" data-aos="fade-up">
-      <h2 class="text-4xl font-bold mb-4">Welcome</h2>
-      <p class="text-lg text-gray-600 mb-8">Your trusted partner for quality service</p>
-      <img src="assets/images/hero.jpg" 
-           srcset="assets/images/hero-480.jpg 480w, assets/images/hero-960.jpg 960w, assets/images/hero-1920.jpg 1920w" 
-           sizes="(max-width: 600px) 480px, (max-width: 1200px) 960px, 1920px" 
-           alt="Hero image showing our services" 
-           loading="lazy"
-           class="rounded-lg shadow-lg mx-auto">
-    </section>
-  </main>
+```tsx
+// src/components/layout/Header.tsx
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Menu } from 'lucide-react';
+import { useState } from 'react';
 
-  <!-- Footer -->
-  <footer class="py-8 bg-gray-100 text-center text-sm text-gray-500">
-    © 2025 Company Name. All rights reserved.
-  </footer>
+export function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  <!-- Alpine.js -->
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  
-  <!-- AOS JavaScript -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800,
-      once: true,
-      offset: 100
-    });
-  </script>
+  return (
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-16 items-center justify-between">
+        <Link to="/" className="text-xl font-bold">
+          Company Name
+        </Link>
+        
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex gap-6">
+          <Link to="/" className="text-sm font-medium hover:text-primary transition-colors">
+            Home
+          </Link>
+          <Link to="/about" className="text-sm font-medium hover:text-primary transition-colors">
+            About
+          </Link>
+          <Link to="/contact" className="text-sm font-medium hover:text-primary transition-colors">
+            Contact
+          </Link>
+        </nav>
 
-</body>
-</html>
+        {/* Mobile Menu Button */}
+        <Button
+          variant="ghost"
+          size="icon"
+          className="md:hidden"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <Menu className="h-5 w-5" />
+        </Button>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden border-t">
+          <nav className="container flex flex-col gap-4 py-4">
+            <Link to="/" className="text-sm font-medium hover:text-primary transition-colors">
+              Home
+            </Link>
+            <Link to="/about" className="text-sm font-medium hover:text-primary transition-colors">
+              About
+            </Link>
+            <Link to="/contact" className="text-sm font-medium hover:text-primary transition-colors">
+              Contact
+            </Link>
+          </nav>
+        </div>
+      )}
+    </header>
+  );
+}
+```
+
+```tsx
+// src/pages/Home.tsx
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { ArrowRight } from 'lucide-react';
+
+export function Home() {
+  return (
+    <div className="container py-16 space-y-16">
+      {/* Hero Section */}
+      <section className="text-center space-y-6">
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+          Welcome to Our Company
+        </h1>
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          Your trusted partner for quality service and innovative solutions
+        </p>
+        <div className="flex gap-4 justify-center">
+          <Button size="lg">
+            Get Started <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+          <Button size="lg" variant="outline">
+            Learn More
+          </Button>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="grid md:grid-cols-3 gap-6">
+        {[1, 2, 3].map((i) => (
+          <Card key={i}>
+            <CardHeader>
+              <CardTitle>Feature {i}</CardTitle>
+              <CardDescription>
+                Description of feature {i}
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Detailed information about this feature and its benefits.
+              </p>
+            </CardContent>
+          </Card>
+        ))}
+      </section>
+    </div>
+  );
+}
+```
 
 ## Tone and Context
 
-The user is a developer working on a client's small business website (e.g., landscaper, artisan, small retailer).
-Focus on clarity, readability, and presentability with subtle modern enhancements.
-Keep JavaScript minimal — Alpine.js for essential interactivity only.
-Use AOS sparingly for scroll animations that enhance user experience without overwhelming.
-Avoid overly complex patterns or external dependencies beyond the approved stack.
+The user is a developer working on modern web applications using React and TypeScript.
+Focus on clean architecture, type safety, reusable components, and maintainable code.
+Leverage shadcn-ui for consistent, accessible UI components.
+Keep components focused and composable — favor small, single-purpose components.
+Use TypeScript to catch errors early and improve code documentation.
+Follow React best practices: hooks, functional components, proper dependency arrays.
+Prioritize accessibility with semantic HTML, ARIA attributes, and keyboard navigation.
+Optimize for performance: code splitting, lazy loading, memoization when needed.
 
 ## Technology Stack Summary
 
-**HTML5**: Semantic structure (header, nav, main, section, article, footer)
-**Tailwind CSS**: Utility-first styling for layout, spacing, typography, colors
-**Alpine.js**: Minimal JavaScript for dropdowns, modals, tabs, toggles
-**AOS**: Scroll-triggered animations (fade, slide, zoom)
-**Heroicons**: Consistent icon library (inline SVG)
-**Google Fonts**: Typography via Google Fonts API
-**Best Practices**: Lazy loading, responsive images (srcset/sizes), accessibility
+**Vite**: Fast build tool with HMR (Hot Module Replacement) for development
+**TypeScript**: Strongly-typed JavaScript for better code quality and IDE support
+**React**: Component-based UI library with hooks for state and effects
+**shadcn-ui**: Accessible, customizable component library built on Radix UI
+**Tailwind CSS**: Utility-first CSS framework for rapid styling
+**Lucide React**: Consistent, beautiful icon library
+**React Router**: Client-side routing for single-page applications
+**Zod** (optional): Schema validation for forms and API data
+**React Hook Form** (optional): Performant form handling with validation
+**Best Practices**: TypeScript strict mode, ESLint, Prettier, proper component structure
+
+### Key Dependencies
+
+```json
+{
+  "dependencies": {
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "react-router-dom": "^6.22.0",
+    "@radix-ui/react-*": "latest",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "tailwind-merge": "^2.2.0",
+    "lucide-react": "^0.344.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "typescript": "^5.4.0",
+    "vite": "^5.1.0",
+    "tailwindcss": "^3.4.0",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.0"
+  }
+}
+```
 
 ## When Unsure
 
 If the user's prompt is ambiguous:
-Default to simple landing page layouts with semantic HTML structure.
-Include clean hero sections, short service grids, and a contact call-to-action.
-Use Tailwind defaults only — no plugins, no dark mode unless specified.
-Add subtle AOS animations (fade-up, fade-in) to key sections.
-Use Alpine.js only if interactivity is essential (e.g., mobile menu, accordion).
-Always implement lazy loading and responsive images by default.
-Use Heroicons for any icons needed.
+Default to creating React functional components with TypeScript.
+Use shadcn-ui components for all standard UI elements (buttons, forms, cards, dialogs).
+Include proper TypeScript interfaces for all props and data structures.
+Create responsive layouts using Tailwind CSS utilities.
+Add Lucide React icons for visual elements.
+Implement proper error handling and loading states.
+Use React Router for multi-page applications.
+Keep components small and focused on single responsibilities.
+Add proper accessibility attributes (aria-labels, semantic HTML).
+Include helpful comments for complex logic or TypeScript types.
+Use the `cn()` utility for conditional class names.
+Follow the established project structure (components/ui, pages, hooks, lib).
+
+### Common Component Patterns
+
+**Page Component**: Full-page views with layout and sections
+**UI Component**: Reusable UI elements from shadcn-ui
+**Layout Component**: Header, Footer, Sidebar for consistent structure
+**Form Component**: Use React Hook Form + Zod for validation
+**Data Display**: Cards, Tables, Lists with proper TypeScript types
+**Modal/Dialog**: Use shadcn-ui Dialog component
+**Loading State**: Use Skeleton components or custom loaders
+**Error Handling**: Error boundaries and user-friendly error messages
