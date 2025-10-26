@@ -10,14 +10,14 @@ export function FAQ() {
       <div className="container px-4">
         <div className="max-w-4xl mx-auto space-y-12">
           {/* Header */}
-          <div className="text-center space-y-4">
+          <div className="text-center space-y-4 animate-fade-in-up">
             <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto">
               <HelpCircle className="h-8 w-8 text-gold" />
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-white">
+            <h1 className="text-5xl md:text-6xl font-bold text-white text-glow">
               Frequently Asked Questions
             </h1>
-            <p className="text-xl text-gray-400">
+            <p className="text-xl text-gray-300">
               Everything you need to know about PlayLabs.ai Playbooks
             </p>
           </div>

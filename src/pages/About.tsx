@@ -8,11 +8,11 @@ export function About() {
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-[#0B0F14] to-gray-900 text-white py-20 md:py-32">
         <div className="container px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in-up">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-glow">
               About PlayLabs.ai
             </h1>
-            <p className="text-2xl text-gray-300">
+            <p className="text-2xl text-gray-200">
               We build the tools to turn AI into everyday leverage
             </p>
           </div>
@@ -52,9 +52,9 @@ export function About() {
       <section className="py-20 bg-[#1a1f2e]">
         <div className="container px-4">
           <div className="max-w-6xl mx-auto space-y-12">
-            <div className="text-center space-y-4">
+            <div className="text-center space-y-4 animate-fade-in-up">
               <h2 className="text-4xl font-bold text-white">What We Believe</h2>
-              <p className="text-xl text-gray-400">
+              <p className="text-xl text-gray-300">
                 Our core values guide everything we create
               </p>
             </div>
