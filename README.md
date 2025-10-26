@@ -25,7 +25,7 @@ A modern web application for AI Playbooks and GPT Assistants built with React, T
 npm install
 
 # Start development server
-npm run dev
+npm run dev -- --host 0.0.0.0
 
 # Build for production
 npm run build
