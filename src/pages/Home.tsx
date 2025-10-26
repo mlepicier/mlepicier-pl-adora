@@ -92,7 +92,7 @@ export function Home() {
       <section className="py-20 bg-[#1a1f2e]">
         <div className="container px-4">
           <div className="max-w-6xl mx-auto space-y-12">
-            <div className="text-center space-y-4">
+            <div className="text-center space-y-4 animate-fade-in-up">
               <h2 className="text-4xl md:text-5xl font-bold text-white">
                 Meet the Playbooks
               </h2>
@@ -165,7 +165,7 @@ export function Home() {
       <section className="py-20 bg-[#0B0F14]">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto space-y-12">
-            <div className="text-center space-y-4">
+            <div className="text-center space-y-4 animate-fade-in-up">
               <h2 className="text-4xl md:text-5xl font-bold text-white">
                 Why PlayLabs.ai?
               </h2>
