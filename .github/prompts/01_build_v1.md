@@ -1,7 +1,7 @@
 # Build V1 — Scaffold site from context
 
 Use:
-- #file:.context/project-brief.md
+- #file:.context/project-brief-plain.md
 - #file:.context/brand-tokens.json
 - #folder:.context/assets
 - #folder:.context/current-website (if present)
