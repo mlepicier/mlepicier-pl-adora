@@ -17,10 +17,10 @@ export function Home() {
       <section className="bg-gradient-to-b from-[#0B0F14] to-gray-900 text-white py-20 md:py-32 overflow-hidden">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in-up">
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-glow">
-              AI Playbooks + GPT Assistants to Work Smarter
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+              AI Playbooks + <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--productivity))] via-[hsl(var(--self-development))] to-[hsl(var(--finance))]">GPT Assistants</span> to Work Smarter
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto text-glow">
+            <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
               Download expert-level Playbooks packed with ready-to-use GPTs that automate work, 
               accelerate learning, and unlock results.
             </p>

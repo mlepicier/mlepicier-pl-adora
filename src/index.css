@@ -24,6 +24,12 @@
     --input: 217.2 32.6% 15%;
     --ring: 212.7 26.8% 83.9%;
     --radius: 0.5rem;
+    --productivity: 165 100% 44%;
+    --self-development: 255 59% 68%;
+    --finance: 47 100% 67%;
+    --fitness: 0 100% 63%;
+    --cooking: 30 100% 62%;
+    --travel: 220 100% 50%;
   }
 
   .dark {
