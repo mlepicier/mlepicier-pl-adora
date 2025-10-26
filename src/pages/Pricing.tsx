@@ -33,11 +33,11 @@ export function Pricing() {
 
           {/* Individual Pricing */}
           <div className="space-y-8">
-            <div className="text-center">
+            <div className="text-center animate-fade-in-up">
               <h2 className="text-3xl font-bold text-white mb-2">
                 Individual Playbooks
               </h2>
-              <p className="text-lg text-gray-400">
+              <p className="text-lg text-gray-300">
                 Each Playbook includes 4 expert-built GPT assistants
               </p>
             </div>
@@ -86,11 +86,11 @@ export function Pricing() {
 
           {/* Bundle Offers */}
           <div className="space-y-8">
-            <div className="text-center">
+            <div className="text-center animate-fade-in-up">
               <h2 className="text-3xl font-bold text-white mb-2">
                 Bundle Offers
               </h2>
-              <p className="text-lg text-gray-400">
+              <p className="text-lg text-gray-300">
                 Save more when you buy multiple Playbooks together
               </p>
             </div>
