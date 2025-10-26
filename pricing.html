@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing & Bundles - PlayLabs.ai</title>
+    <meta name="description" content="Choose your AI Playbook package. Individual playbooks or bundles with special launch pricing.">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">PlayLabs.ai</a>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="playbooks.html">Playbooks</a></li>
+                    <li><a href="pricing.html" class="active">Pricing</a></li>
+                    <li><a href="free-gpt.html">Free GPT</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Launch Promo Banner -->
+    <div class="promo-banner">
+        <div class="container">
+            <p>🎉 Launch Special: Buy 1, get 25% off 2nd | Buy 3, get 1 FREE!</p>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Pricing & Bundles</h1>
+            <p class="page-subtitle">Choose the perfect package to unlock your AI-powered potential</p>
+        </div>
+    </section>
+
+    <!-- Pricing Grid -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="pricing-grid">
+                <!-- Individual -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Individual Playbook</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">29</span>
+                        </div>
+                        <p class="price-desc">Per Playbook</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Choose any single Playbook</li>
+                        <li>✓ All Custom GPT Assistants</li>
+                        <li>✓ Instant digital download</li>
+                        <li>✓ Lifetime updates included</li>
+                        <li>✓ 14-day money-back guarantee</li>
+                    </ul>
+                    <a href="playbooks.html" class="btn btn-outline">Choose Playbook</a>
+                </div>
+
+                <!-- Bundle - Popular -->
+                <div class="pricing-card featured">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <div class="pricing-header">
+                        <h3>Power Bundle</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">59</span>
+                        </div>
+                        <p class="price-desc">Two Related Playbooks</p>
+                        <p class="savings">Save $18!</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Choose 2 related Playbooks</li>
+                        <li>✓ All GPT Assistants from both</li>
+                        <li>✓ Instant digital download</li>
+                        <li>✓ Lifetime updates included</li>
+                        <li>✓ Priority email support</li>
+                        <li>✓ 14-day money-back guarantee</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectBundle('power')">Get Power Bundle</button>
+                    <div class="bundle-suggestions">
+                        <p><strong>Popular Combos:</strong></p>
+                        <p>• Productivity + Self-Development</p>
+                        <p>• Finance + Productivity</p>
+                        <p>• Fitness + Cooking</p>
+                    </div>
+                </div>
+
+                <!-- All Access -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>All Access</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">9.99</span>
+                        </div>
+                        <p class="price-desc">Per Month</p>
+                        <p class="coming-soon">Coming Soon</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Access to ALL 6 Playbooks</li>
+                        <li>✓ Every Custom GPT Assistant</li>
+                        <li>✓ New Playbooks as released</li>
+                        <li>✓ Exclusive community access</li>
+                        <li>✓ Priority support</li>
+                        <li>✓ Cancel anytime</li>
+                    </ul>
+                    <button class="btn btn-outline" disabled>Notify Me</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Launch Promo Details -->
+    <section class="promo-details">
+        <div class="container">
+            <h2 class="section-title">Launch Special Offers</h2>
+            <div class="promo-grid">
+                <div class="promo-card">
+                    <div class="promo-icon">🎁</div>
+                    <h3>Buy 1, Get 25% Off 2nd</h3>
+                    <p>Purchase any Playbook and get 25% off your second one. Automatically applied at checkout.</p>
+                </div>
+                <div class="promo-card">
+                    <div class="promo-icon">🎉</div>
+                    <h3>Buy 3, Get 1 FREE</h3>
+                    <p>Get a complete set! Buy any 3 Playbooks and choose a 4th one absolutely free.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Mini -->
+    <section class="faq-mini">
+        <div class="container">
+            <h2 class="section-title">Common Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What's included in each Playbook?</h3>
+                    <p>Each Playbook contains 3-5 expert-built Custom GPT Assistants, organized documentation, and step-by-step guides for maximum results.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do I need ChatGPT Plus?</h3>
+                    <p>Most GPTs work with free ChatGPT, but some advanced features require ChatGPT Plus for optimal performance.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Are updates really lifetime?</h3>
+                    <p>Yes! Early buyers get lifetime updates. We continuously improve GPTs and add new ones to your Playbooks at no extra cost.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What's your refund policy?</h3>
+                    <p>We offer a 14-day money-back guarantee. If you're not satisfied, we'll refund your purchase, no questions asked.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>PlayLabs.ai</h3>
+                    <p class="tagline">Turn AI Into Your Unfair Advantage</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="playbooks.html">Playbooks</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="free-gpt.html">Newsletter</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="terms.html">Terms</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="TikTok">TT</a>
+                        <a href="#" aria-label="Instagram">IG</a>
+                        <a href="#" aria-label="Twitter">TW</a>
+                        <a href="#" aria-label="LinkedIn">LI</a>
+                    </div>
+                    <div class="payment-badges">
+                        <span>Stripe</span>
+                        <span>Shopify</span>
+                        <span>Whop</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PlayLabs.ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
