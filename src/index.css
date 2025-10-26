@@ -58,3 +58,113 @@
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   }
 }
+
+@layer utilities {
+  /* Neon glow effects */
+  .glow-gold {
+    box-shadow: 0 0 20px rgba(255, 213, 90, 0.5), 0 0 40px rgba(255, 213, 90, 0.2);
+  }
+  
+  .glow-gold-intense {
+    box-shadow: 0 0 30px rgba(255, 213, 90, 0.8), 0 0 60px rgba(255, 213, 90, 0.4);
+  }
+  
+  .glow-green {
+    box-shadow: 0 0 20px rgba(0, 224, 164, 0.5), 0 0 40px rgba(0, 224, 164, 0.2);
+  }
+  
+  .glow-purple {
+    box-shadow: 0 0 20px rgba(124, 92, 255, 0.5), 0 0 40px rgba(124, 92, 255, 0.2);
+  }
+  
+  .glow-orange {
+    box-shadow: 0 0 20px rgba(255, 167, 59, 0.5), 0 0 40px rgba(255, 167, 59, 0.2);
+  }
+  
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(0, 71, 255, 0.5), 0 0 40px rgba(0, 71, 255, 0.2);
+  }
+  
+  .glow-red {
+    box-shadow: 0 0 20px rgba(255, 65, 65, 0.5), 0 0 40px rgba(255, 65, 65, 0.2);
+  }
+  
+  /* Text shadow for better readability on dark backgrounds */
+  .text-glow {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Hover lift effect */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px);
+  }
+  
+  /* Smooth scale animation */
+  .hover-scale {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Gradient animations */
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  .gradient-animate {
+    background-size: 200% 200%;
+    animation: gradient-shift 6s ease infinite;
+  }
+  
+  /* Pulse glow animation */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(255, 213, 90, 0.4), 0 0 40px rgba(255, 213, 90, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(255, 213, 90, 0.8), 0 0 60px rgba(255, 213, 90, 0.4);
+    }
+  }
+  
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  /* Shimmer effect */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+  
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 3s infinite;
+  }
+  
+  /* Better text contrast on dark backgrounds */
+  .text-light-contrast {
+    color: #f5f5f5;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  }
+}
