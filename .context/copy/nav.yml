@@ -1,0 +1,32 @@
+# Navigation Labels & Destinations
+# Used by the header and footer components.
+
+header:
+  - label: "Accueil"
+    href: "/"
+  - label: "À propos"
+    href: "/about"
+  - label: "Services"
+    href: "/services"
+  - label: "Contact"
+    href: "/contact"
+
+footer:
+  sections:
+    - title: "Société"
+      links:
+        - label: "À propos"
+          href: "/about"
+        - label: "Mentions légales"
+          href: "/legal"
+    - title: "Support"
+      links:
+        - label: "Contact"
+          href: "/contact"
+        - label: "Politique de confidentialité"
+          href: "/privacy"
+  social:
+    - label: "LinkedIn"
+      href: "https://www.linkedin.com/company/{{client-linkedin}}"
+    - label: "Instagram"
+      href: "https://www.instagram.com/{{client-instagram}}"

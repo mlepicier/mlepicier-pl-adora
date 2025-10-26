@@ -1,0 +1,10 @@
+# Canonical Service Data
+# Used to generate the services grid, cards, and SEO snippets.
+
+services:
+  - title: ""
+    one_liner: ""
+    bullets:
+      - ""
+      - ""
+      - ""
