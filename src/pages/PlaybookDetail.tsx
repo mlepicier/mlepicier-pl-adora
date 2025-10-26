@@ -10,10 +10,10 @@ export function PlaybookDetail() {
 
   if (!playbook) {
     return (
-      <div className="w-full py-20 bg-gray-50">
+      <div className="w-full py-20 bg-[#1a1f2e]">
         <div className="container px-4">
           <div className="max-w-2xl mx-auto text-center">
-            <h1 className="text-4xl font-bold text-[#0B0F14] mb-4">Playbook Not Found</h1>
+            <h1 className="text-4xl font-bold text-white mb-4">Playbook Not Found</h1>
             <Button asChild>
               <Link to="/playbooks">Back to Playbooks</Link>
             </Button>
@@ -74,12 +74,12 @@ export function PlaybookDetail() {
       </section>
 
       {/* What's Inside Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#0B0F14]">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto space-y-12">
             <div className="text-center space-y-4">
-              <h2 className="text-4xl font-bold text-[#0B0F14]">What's Inside</h2>
-              <p className="text-xl text-gray-600">
+              <h2 className="text-4xl font-bold text-white">What's Inside</h2>
+              <p className="text-xl text-gray-400">
                 {playbook.gpts.length} expert-built GPT assistants ready to use
               </p>
             </div>
@@ -111,18 +111,18 @@ export function PlaybookDetail() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#1a1f2e]">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto space-y-12">
             <div className="text-center space-y-4">
-              <h2 className="text-4xl font-bold text-[#0B0F14]">Key Benefits</h2>
+              <h2 className="text-4xl font-bold text-white">Key Benefits</h2>
             </div>
 
             <div className="grid md:grid-cols-2 gap-4">
               {playbook.benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3 bg-white p-4 rounded-lg">
+                <div key={index} className="flex items-start gap-3 bg-[#0B0F14] p-4 rounded-lg border border-gray-800">
                   <CheckCircle className="h-6 w-6 flex-shrink-0 mt-0.5" style={{ color: playbook.color }} />
-                  <p className="text-lg text-gray-700">{benefit}</p>
+                  <p className="text-lg text-gray-300">{benefit}</p>
                 </div>
               ))}
             </div>
@@ -131,11 +131,11 @@ export function PlaybookDetail() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#0B0F14]">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto space-y-12">
             <div className="text-center space-y-4">
-              <h2 className="text-4xl font-bold text-[#0B0F14]">How It Works</h2>
+              <h2 className="text-4xl font-bold text-white">How It Works</h2>
             </div>
 
             <div className="space-y-6">
@@ -147,8 +147,8 @@ export function PlaybookDetail() {
                   1
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-[#0B0F14] mb-2">Purchase & Download</h3>
-                  <p className="text-gray-600">Get instant access to your Playbook after purchase. Download all GPT assistants immediately.</p>
+                  <h3 className="text-xl font-semibold text-white mb-2">Purchase & Download</h3>
+                  <p className="text-gray-400">Get instant access to your Playbook after purchase. Download all GPT assistants immediately.</p>
                 </div>
               </div>
 
@@ -160,8 +160,8 @@ export function PlaybookDetail() {
                   2
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-[#0B0F14] mb-2">Import to ChatGPT</h3>
-                  <p className="text-gray-600">Follow the simple instructions to import your GPT assistants into ChatGPT.</p>
+                  <h3 className="text-xl font-semibold text-white mb-2">Import to ChatGPT</h3>
+                  <p className="text-gray-400">Follow the simple instructions to import your GPT assistants into ChatGPT.</p>
                 </div>
               </div>
 
@@ -173,8 +173,8 @@ export function PlaybookDetail() {
                   3
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-[#0B0F14] mb-2">Start Using AI</h3>
-                  <p className="text-gray-600">Begin leveraging AI to automate tasks, accelerate learning, and achieve better results.</p>
+                  <h3 className="text-xl font-semibold text-white mb-2">Start Using AI</h3>
+                  <p className="text-gray-400">Begin leveraging AI to automate tasks, accelerate learning, and achieve better results.</p>
                 </div>
               </div>
             </div>

@@ -41,14 +41,14 @@ export function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#0B0F14]">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto text-center space-y-12">
             <div className="space-y-4">
-              <h2 className="text-4xl md:text-5xl font-bold text-[#0B0F14]">
+              <h2 className="text-4xl md:text-5xl font-bold text-white">
                 How It Works
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-400">
                 Three simple steps to transform your productivity
               </p>
             </div>
@@ -58,8 +58,8 @@ export function Home() {
                 <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto">
                   <Download className="h-8 w-8 text-gold" />
                 </div>
-                <h3 className="text-2xl font-semibold text-[#0B0F14]">1. Choose Playbook</h3>
-                <p className="text-gray-600">
+                <h3 className="text-2xl font-semibold text-white">1. Choose Playbook</h3>
+                <p className="text-gray-400">
                   Select from our curated collection of AI Playbooks designed for every area of your life
                 </p>
               </div>
@@ -68,8 +68,8 @@ export function Home() {
                 <div className="w-16 h-16 rounded-full bg-purple/10 flex items-center justify-center mx-auto">
                   <Sparkles className="h-8 w-8 text-purple" />
                 </div>
-                <h3 className="text-2xl font-semibold text-[#0B0F14]">2. Open GPTs</h3>
-                <p className="text-gray-600">
+                <h3 className="text-2xl font-semibold text-white">2. Open GPTs</h3>
+                <p className="text-gray-400">
                   Access your custom GPT assistants instantly — no setup required, just download and go
                 </p>
               </div>
@@ -78,8 +78,8 @@ export function Home() {
                 <div className="w-16 h-16 rounded-full bg-green/10 flex items-center justify-center mx-auto">
                   <Zap className="h-8 w-8 text-green" />
                 </div>
-                <h3 className="text-2xl font-semibold text-[#0B0F14]">3. Get Results</h3>
-                <p className="text-gray-600">
+                <h3 className="text-2xl font-semibold text-white">3. Get Results</h3>
+                <p className="text-gray-400">
                   Watch AI automate tasks, accelerate learning, and deliver results faster than ever
                 </p>
               </div>
@@ -89,14 +89,14 @@ export function Home() {
       </section>
 
       {/* Meet the Playbooks Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#1a1f2e]">
         <div className="container px-4">
           <div className="max-w-6xl mx-auto space-y-12">
             <div className="text-center space-y-4">
-              <h2 className="text-4xl md:text-5xl font-bold text-[#0B0F14]">
+              <h2 className="text-4xl md:text-5xl font-bold text-white">
                 Meet the Playbooks
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-400">
                 Expert-built AI assistants for every aspect of your life
               </p>
             </div>
@@ -127,7 +127,7 @@ export function Home() {
                       <p className="text-sm font-semibold text-[#0B0F14]">Includes {playbook.gpts.length} GPTs:</p>
                       <ul className="space-y-1">
                         {playbook.gpts.slice(0, 3).map((gpt, index) => (
-                          <li key={index} className="text-sm text-gray-600 flex items-start">
+                          <li key={index} className="text-sm text-gray-400 flex items-start">
                             <CheckCircle className="h-4 w-4 mr-2 mt-0.5 flex-shrink-0" style={{ color: playbook.color }} />
                             {gpt.name}
                           </li>
@@ -161,11 +161,11 @@ export function Home() {
       </section>
 
       {/* Why PlayLabs.ai Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#0B0F14]">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto space-y-12">
             <div className="text-center space-y-4">
-              <h2 className="text-4xl md:text-5xl font-bold text-[#0B0F14]">
+              <h2 className="text-4xl md:text-5xl font-bold text-white">
                 Why PlayLabs.ai?
               </h2>
             </div>
@@ -175,8 +175,8 @@ export function Home() {
                 <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto">
                   <Sparkles className="h-8 w-8 text-gold" />
                 </div>
-                <h3 className="text-xl font-semibold text-[#0B0F14]">Expert-Built GPTs</h3>
-                <p className="text-gray-600">
+                <h3 className="text-xl font-semibold text-white">Expert-Built GPTs</h3>
+                <p className="text-gray-400">
                   Every GPT is crafted by experts and tested for real-world results
                 </p>
               </div>
@@ -185,8 +185,8 @@ export function Home() {
                 <div className="w-16 h-16 rounded-full bg-green/10 flex items-center justify-center mx-auto">
                   <Zap className="h-8 w-8 text-green" />
                 </div>
-                <h3 className="text-xl font-semibold text-[#0B0F14]">Instant Access</h3>
-                <p className="text-gray-600">
+                <h3 className="text-xl font-semibold text-white">Instant Access</h3>
+                <p className="text-gray-400">
                   Download immediately after purchase — no waiting, no hassle
                 </p>
               </div>
@@ -195,8 +195,8 @@ export function Home() {
                 <div className="w-16 h-16 rounded-full bg-purple/10 flex items-center justify-center mx-auto">
                   <CheckCircle className="h-8 w-8 text-purple" />
                 </div>
-                <h3 className="text-xl font-semibold text-[#0B0F14]">Lifetime Updates</h3>
-                <p className="text-gray-600">
+                <h3 className="text-xl font-semibold text-white">Lifetime Updates</h3>
+                <p className="text-gray-400">
                   Get all future improvements and new GPTs at no additional cost
                 </p>
               </div>

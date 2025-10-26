@@ -20,12 +20,12 @@ export function About() {
       </section>
 
       {/* Story Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#0B0F14]">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto space-y-12">
             <div className="space-y-6">
-              <h2 className="text-4xl font-bold text-[#0B0F14]">Our Story</h2>
-              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+              <h2 className="text-4xl font-bold text-white">Our Story</h2>
+              <div className="space-y-4 text-lg text-gray-300 leading-relaxed">
                 <p>
                   PlayLabs.ai was born from a simple observation: AI is powerful, but most people 
                   don't know where to start. ChatGPT and similar tools have incredible potential, 
@@ -49,53 +49,53 @@ export function About() {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#1a1f2e]">
         <div className="container px-4">
           <div className="max-w-6xl mx-auto space-y-12">
             <div className="text-center space-y-4">
-              <h2 className="text-4xl font-bold text-[#0B0F14]">What We Believe</h2>
-              <p className="text-xl text-gray-600">
+              <h2 className="text-4xl font-bold text-white">What We Believe</h2>
+              <p className="text-xl text-gray-400">
                 Our core values guide everything we create
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="bg-white p-6 rounded-xl space-y-4">
+              <div className="bg-[#0B0F14] p-6 rounded-xl space-y-4 border border-gray-800">
                 <div className="w-14 h-14 bg-gold/10 rounded-full flex items-center justify-center">
                   <Sparkles className="h-7 w-7 text-gold" />
                 </div>
-                <h3 className="text-xl font-semibold text-[#0B0F14]">Expert Quality</h3>
-                <p className="text-gray-600">
+                <h3 className="text-xl font-semibold text-white">Expert Quality</h3>
+                <p className="text-gray-400">
                   Every GPT is built by experts and tested for real-world effectiveness
                 </p>
               </div>
 
-              <div className="bg-white p-6 rounded-xl space-y-4">
+              <div className="bg-[#0B0F14] p-6 rounded-xl space-y-4 border border-gray-800">
                 <div className="w-14 h-14 bg-green/10 rounded-full flex items-center justify-center">
                   <Zap className="h-7 w-7 text-green" />
                 </div>
-                <h3 className="text-xl font-semibold text-[#0B0F14]">Instant Value</h3>
-                <p className="text-gray-600">
+                <h3 className="text-xl font-semibold text-white">Instant Value</h3>
+                <p className="text-gray-400">
                   No setup complexity. Download, import, and start getting results immediately
                 </p>
               </div>
 
-              <div className="bg-white p-6 rounded-xl space-y-4">
+              <div className="bg-[#0B0F14] p-6 rounded-xl space-y-4 border border-gray-800">
                 <div className="w-14 h-14 bg-purple/10 rounded-full flex items-center justify-center">
                   <Users className="h-7 w-7 text-purple" />
                 </div>
-                <h3 className="text-xl font-semibold text-[#0B0F14]">User-Centric</h3>
-                <p className="text-gray-600">
+                <h3 className="text-xl font-semibold text-white">User-Centric</h3>
+                <p className="text-gray-400">
                   Designed for real people solving real problems, not tech enthusiasts
                 </p>
               </div>
 
-              <div className="bg-white p-6 rounded-xl space-y-4">
+              <div className="bg-[#0B0F14] p-6 rounded-xl space-y-4 border border-gray-800">
                 <div className="w-14 h-14 bg-blue/10 rounded-full flex items-center justify-center">
                   <Rocket className="h-7 w-7 text-blue" />
                 </div>
-                <h3 className="text-xl font-semibold text-[#0B0F14]">Continuous Growth</h3>
-                <p className="text-gray-600">
+                <h3 className="text-xl font-semibold text-white">Continuous Growth</h3>
+                <p className="text-gray-400">
                   Regular updates and improvements keep you at the cutting edge
                 </p>
               </div>
@@ -105,17 +105,17 @@ export function About() {
       </section>
 
       {/* Vision Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#0B0F14]">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto space-y-12">
             <div className="space-y-6">
-              <h2 className="text-4xl font-bold text-[#0B0F14]">Our Vision</h2>
-              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+              <h2 className="text-4xl font-bold text-white">Our Vision</h2>
+              <div className="space-y-4 text-lg text-gray-300 leading-relaxed">
                 <p>
                   We're just getting started. PlayLabs.ai isn't just about Playbooks — it's about 
                   building a complete ecosystem where AI becomes your personal productivity layer.
                 </p>
-                <p className="font-semibold text-[#0B0F14]">What's Next:</p>
+                <p className="font-semibold text-white">What's Next:</p>
                 <ul className="space-y-3 ml-6">
                   <li className="flex items-start">
                     <span className="text-gold mr-3">→</span>

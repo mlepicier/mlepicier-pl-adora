@@ -17,7 +17,7 @@ export function FreeGPT() {
 
   if (submitted) {
     return (
-      <div className="w-full py-20 bg-gray-50 min-h-[60vh] flex items-center">
+      <div className="w-full py-20 bg-[#1a1f2e] min-h-[60vh] flex items-center">
         <div className="container px-4">
           <Card className="max-w-2xl mx-auto text-center border-2 border-green">
             <CardHeader>
@@ -31,8 +31,8 @@ export function FreeGPT() {
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="bg-blue/5 border border-blue/20 rounded-lg p-6 text-left">
-                <h3 className="font-semibold text-[#0B0F14] mb-3">Next Steps:</h3>
-                <ol className="space-y-2 text-gray-700">
+                <h3 className="font-semibold text-white mb-3">Next Steps:</h3>
+                <ol className="space-y-2 text-gray-300">
                   <li className="flex items-start">
                     <span className="font-bold mr-2">1.</span>
                     <span>Check your inbox (and spam folder)</span>
@@ -49,7 +49,7 @@ export function FreeGPT() {
               </div>
               
               <div className="pt-6 border-t">
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-400 mb-4">
                   Want access to ALL our expert-built GPT assistants?
                 </p>
                 <Button asChild size="lg" className="bg-gold text-[#0B0F14] hover:bg-gold/90">
@@ -86,7 +86,7 @@ export function FreeGPT() {
       </section>
 
       {/* Form Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#1a1f2e]">
         <div className="container px-4">
           <div className="max-w-2xl mx-auto">
             <Card className="border-2">
@@ -130,7 +130,7 @@ export function FreeGPT() {
                     Get Free Access <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
 
-                  <p className="text-xs text-center text-gray-500">
+                  <p className="text-xs text-center text-gray-400">
                     By submitting, you agree to receive emails from PlayLabs.ai. Unsubscribe anytime.
                   </p>
                 </form>
@@ -141,48 +141,48 @@ export function FreeGPT() {
       </section>
 
       {/* What You Get Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#0B0F14]">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto space-y-12">
             <div className="text-center space-y-4">
-              <h2 className="text-4xl font-bold text-[#0B0F14]">
+              <h2 className="text-4xl font-bold text-white">
                 What You'll Get
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-400">
                 Your free AI Productivity Assistant includes:
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="flex items-start gap-4 bg-gray-50 p-6 rounded-lg">
+              <div className="flex items-start gap-4 bg-[#1a1f2e] p-6 rounded-lg border border-gray-800">
                 <CheckCircle className="h-6 w-6 text-green flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-[#0B0F14] mb-2">Email Management</h3>
-                  <p className="text-gray-600">Automatically prioritize and draft responses to your emails</p>
+                  <h3 className="font-semibold text-white mb-2">Email Management</h3>
+                  <p className="text-gray-400">Automatically prioritize and draft responses to your emails</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 bg-gray-50 p-6 rounded-lg">
+              <div className="flex items-start gap-4 bg-[#1a1f2e] p-6 rounded-lg border border-gray-800">
                 <CheckCircle className="h-6 w-6 text-green flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-[#0B0F14] mb-2">Task Planning</h3>
-                  <p className="text-gray-600">Create optimized daily schedules and to-do lists</p>
+                  <h3 className="font-semibold text-white mb-2">Task Planning</h3>
+                  <p className="text-gray-400">Create optimized daily schedules and to-do lists</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 bg-gray-50 p-6 rounded-lg">
+              <div className="flex items-start gap-4 bg-[#1a1f2e] p-6 rounded-lg border border-gray-800">
                 <CheckCircle className="h-6 w-6 text-green flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-[#0B0F14] mb-2">Meeting Summaries</h3>
-                  <p className="text-gray-600">Generate concise summaries and action items from meetings</p>
+                  <h3 className="font-semibold text-white mb-2">Meeting Summaries</h3>
+                  <p className="text-gray-400">Generate concise summaries and action items from meetings</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 bg-gray-50 p-6 rounded-lg">
+              <div className="flex items-start gap-4 bg-[#1a1f2e] p-6 rounded-lg border border-gray-800">
                 <CheckCircle className="h-6 w-6 text-green flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-[#0B0F14] mb-2">Quick Research</h3>
-                  <p className="text-gray-600">Get fast, accurate information on any topic</p>
+                  <h3 className="font-semibold text-white mb-2">Quick Research</h3>
+                  <p className="text-gray-400">Get fast, accurate information on any topic</p>
                 </div>
               </div>
             </div>

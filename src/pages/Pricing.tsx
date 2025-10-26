@@ -6,15 +6,15 @@ import { playbooks } from '@/lib/data';
 
 export function Pricing() {
   return (
-    <div className="w-full py-20 bg-gray-50">
+    <div className="w-full py-20 bg-[#1a1f2e]">
       <div className="container px-4">
         <div className="max-w-6xl mx-auto space-y-16">
           {/* Header */}
           <div className="text-center space-y-4">
-            <h1 className="text-5xl md:text-6xl font-bold text-[#0B0F14]">
+            <h1 className="text-5xl md:text-6xl font-bold text-white">
               Pricing & Bundles
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Choose individual Playbooks or save with our bundle offers
             </p>
           </div>
@@ -25,7 +25,7 @@ export function Pricing() {
             <h2 className="text-3xl font-bold text-[#0B0F14] mb-4">
               🎉 Launch Promo — Limited Time Only!
             </h2>
-            <div className="space-y-2 text-lg text-gray-700">
+            <div className="space-y-2 text-lg text-gray-300">
               <p className="font-semibold">✓ Buy 1, get 25% off your 2nd Playbook</p>
               <p className="font-semibold">✓ Buy 3, get 1 FREE!</p>
             </div>
@@ -34,10 +34,10 @@ export function Pricing() {
           {/* Individual Pricing */}
           <div className="space-y-8">
             <div className="text-center">
-              <h2 className="text-3xl font-bold text-[#0B0F14] mb-2">
+              <h2 className="text-3xl font-bold text-white mb-2">
                 Individual Playbooks
               </h2>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-gray-400">
                 Each Playbook includes 4 expert-built GPT assistants
               </p>
             </div>
@@ -56,14 +56,14 @@ export function Pricing() {
                   </CardHeader>
                   <CardContent>
                     <div className="mb-4">
-                      <span className="text-4xl font-bold text-[#0B0F14]">${playbook.price}</span>
-                      <span className="text-gray-500 ml-2">one-time</span>
+                      <span className="text-4xl font-bold text-white">${playbook.price}</span>
+                      <span className="text-gray-400 ml-2">one-time</span>
                     </div>
                     <ul className="space-y-2">
                       {playbook.benefits.slice(0, 3).map((benefit, index) => (
                         <li key={index} className="flex items-start text-sm">
                           <CheckCircle className="h-4 w-4 mr-2 mt-0.5 flex-shrink-0" style={{ color: playbook.color }} />
-                          <span className="text-gray-600">{benefit}</span>
+                          <span className="text-gray-400">{benefit}</span>
                         </li>
                       ))}
                     </ul>
@@ -87,10 +87,10 @@ export function Pricing() {
           {/* Bundle Offers */}
           <div className="space-y-8">
             <div className="text-center">
-              <h2 className="text-3xl font-bold text-[#0B0F14] mb-2">
+              <h2 className="text-3xl font-bold text-white mb-2">
                 Bundle Offers
               </h2>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-gray-400">
                 Save more when you buy multiple Playbooks together
               </p>
             </div>
@@ -109,12 +109,12 @@ export function Pricing() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <span className="text-5xl font-bold text-[#0B0F14]">$59</span>
-                    <span className="text-gray-500 ml-2 line-through">$58</span>
+                    <span className="text-5xl font-bold text-white">$59</span>
+                    <span className="text-gray-400 ml-2 line-through">$58</span>
                     <span className="text-green ml-2 font-semibold">(Save $29)</span>
                   </div>
                   <div className="space-y-2">
-                    <p className="font-semibold text-[#0B0F14]">Includes:</p>
+                    <p className="font-semibold text-white">Includes:</p>
                     <ul className="space-y-2">
                       <li className="flex items-center text-sm">
                         <CheckCircle className="h-4 w-4 mr-2 text-green" />
@@ -144,12 +144,12 @@ export function Pricing() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <span className="text-5xl font-bold text-[#0B0F14]">$59</span>
-                    <span className="text-gray-500 ml-2 line-through">$58</span>
+                    <span className="text-5xl font-bold text-white">$59</span>
+                    <span className="text-gray-400 ml-2 line-through">$58</span>
                     <span className="text-orange ml-2 font-semibold">(Save $29)</span>
                   </div>
                   <div className="space-y-2">
-                    <p className="font-semibold text-[#0B0F14]">Includes:</p>
+                    <p className="font-semibold text-white">Includes:</p>
                     <ul className="space-y-2">
                       <li className="flex items-center text-sm">
                         <CheckCircle className="h-4 w-4 mr-2 text-orange" />
@@ -181,8 +181,8 @@ export function Pricing() {
             </CardHeader>
             <CardContent className="text-center space-y-6">
               <div>
-                <span className="text-6xl font-bold text-[#0B0F14]">$9.99</span>
-                <span className="text-gray-600 text-xl ml-2">/month</span>
+                <span className="text-6xl font-bold text-white">$9.99</span>
+                <span className="text-gray-400 text-xl ml-2">/month</span>
               </div>
               <ul className="space-y-3 max-w-md mx-auto">
                 <li className="flex items-center text-left">
@@ -211,25 +211,25 @@ export function Pricing() {
           </Card>
 
           {/* What's Included */}
-          <div className="bg-white rounded-2xl p-8 space-y-6">
-            <h3 className="text-2xl font-bold text-[#0B0F14] text-center">
+          <div className="bg-[#0B0F14] rounded-2xl p-8 space-y-6 border border-gray-800">
+            <h3 className="text-2xl font-bold text-white text-center">
               What's Included With Every Purchase
             </h3>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center space-y-2">
                 <CheckCircle className="h-8 w-8 mx-auto text-green" />
-                <p className="font-semibold text-[#0B0F14]">Instant Access</p>
-                <p className="text-sm text-gray-600">Download immediately after purchase</p>
+                <p className="font-semibold text-white">Instant Access</p>
+                <p className="text-sm text-gray-400">Download immediately after purchase</p>
               </div>
               <div className="text-center space-y-2">
                 <CheckCircle className="h-8 w-8 mx-auto text-green" />
-                <p className="font-semibold text-[#0B0F14]">Lifetime Updates</p>
-                <p className="text-sm text-gray-600">Free updates for early buyers</p>
+                <p className="font-semibold text-white">Lifetime Updates</p>
+                <p className="text-sm text-gray-400">Free updates for early buyers</p>
               </div>
               <div className="text-center space-y-2">
                 <CheckCircle className="h-8 w-8 mx-auto text-green" />
-                <p className="font-semibold text-[#0B0F14]">14-Day Guarantee</p>
-                <p className="text-sm text-gray-600">Full refund if not satisfied</p>
+                <p className="font-semibold text-white">14-Day Guarantee</p>
+                <p className="text-sm text-gray-400">Full refund if not satisfied</p>
               </div>
             </div>
           </div>

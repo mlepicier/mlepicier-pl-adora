@@ -6,15 +6,15 @@ import { playbooks } from '@/lib/data';
 
 export function Playbooks() {
   return (
-    <div className="w-full py-20 bg-gray-50">
+    <div className="w-full py-20 bg-[#1a1f2e]">
       <div className="container px-4">
         <div className="max-w-6xl mx-auto space-y-12">
           {/* Header */}
           <div className="text-center space-y-4">
-            <h1 className="text-5xl md:text-6xl font-bold text-[#0B0F14]">
+            <h1 className="text-5xl md:text-6xl font-bold text-white">
               AI Playbooks
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Choose your Playbook and get instant access to expert-built GPT assistants
             </p>
           </div>
@@ -46,7 +46,7 @@ export function Playbooks() {
                     <p className="text-sm font-semibold text-[#0B0F14]">Includes {playbook.gpts.length} GPTs:</p>
                     <ul className="space-y-2">
                       {playbook.gpts.map((gpt, index) => (
-                        <li key={index} className="text-sm text-gray-600 flex items-start">
+                        <li key={index} className="text-sm text-gray-400 flex items-start">
                           <CheckCircle className="h-4 w-4 mr-2 mt-0.5 flex-shrink-0" style={{ color: playbook.color }} />
                           <span>{gpt.name}</span>
                         </li>
@@ -57,7 +57,7 @@ export function Playbooks() {
                 <CardFooter className="flex flex-col gap-3">
                   <div className="w-full flex items-center justify-between border-t pt-4">
                     <div>
-                      <p className="text-sm text-gray-500">Price</p>
+                      <p className="text-sm text-gray-400">Price</p>
                       <span className="text-3xl font-bold text-[#0B0F14]">${playbook.price}</span>
                     </div>
                   </div>
@@ -90,7 +90,7 @@ export function Playbooks() {
             <h2 className="text-3xl font-bold text-[#0B0F14] mb-4">
               Save with Bundles
             </h2>
-            <p className="text-lg text-gray-700 mb-6">
+            <p className="text-lg text-gray-300 mb-6">
               Buy multiple Playbooks and save big with our bundle offers
             </p>
             <Button asChild size="lg" className="bg-[#0B0F14] text-white hover:bg-[#0B0F14]/90">
@@ -101,7 +101,7 @@ export function Playbooks() {
           </div>
 
           {/* Disclaimer */}
-          <div className="text-center text-sm text-gray-500 bg-white rounded-lg p-6">
+          <div className="text-center text-sm text-gray-400 bg-[#0B0F14] rounded-lg p-6 border border-gray-800">
             <p>
               <strong>Note:</strong> Some GPTs may require ChatGPT Plus for full performance. 
               Most features work with the free version of ChatGPT.
