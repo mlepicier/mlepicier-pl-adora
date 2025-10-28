@@ -32,9 +32,48 @@ npm run build
 
 # Preview production build
 npm run preview
+
+# Deploy to GitHub Pages
+npm run deploy
 ```
 
-## Project Structure 
+## Deployment to GitHub Pages
+
+This project is configured for GitHub Pages deployment. There are two deployment methods:
+
+### Method 1: Automated Deployment (Recommended)
+
+The project includes a GitHub Actions workflow that automatically deploys to GitHub Pages when you push to the main branch.
+
+**Setup Steps:**
+
+1. Go to your GitHub repository settings
+2. Navigate to **Pages** under **Code and automation**
+3. Under **Build and deployment**, select **Source: GitHub Actions**
+4. Push your changes to the main branch
+5. The site will be automatically deployed to `https://yourusername.github.io/mlepicier-pl-adora/`
+
+### Method 2: Manual Deployment
+
+To deploy manually using gh-pages:
+
+```bash
+# Install dependencies (if not already done)
+npm install
+
+# Deploy to GitHub Pages
+npm run deploy
+```
+
+**Note:** For manual deployment, make sure GitHub Pages is set to deploy from the `gh-pages` branch in your repository settings.
+
+## Configuration
+
+The `vite.config.ts` is configured with:
+- `base: '/mlepicier-pl-adora/'` - Update this if your repository name is different
+- The router uses HashRouter for GitHub Pages compatibility
+
+## Getting Started 
 
 ```
 src/
