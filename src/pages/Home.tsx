@@ -55,7 +55,7 @@ export function Home() {
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="space-y-4 group">
-                <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto transition-all duration-300 group-hover:bg-gold/20 group-hover:glow-gold group-hover:scale-110 animate-float">
+                <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto transition-all duration-300 group-hover:bg-gold/20 group-hover:glow-gold group-hover:scale-110">
                   <Download className="h-8 w-8 text-gold" />
                 </div>
                 <h3 className="text-2xl font-semibold text-white">1. Choose Playbook</h3>
@@ -65,7 +65,7 @@ export function Home() {
               </div>
 
               <div className="space-y-4 group">
-                <div className="w-16 h-16 rounded-full bg-purple/10 flex items-center justify-center mx-auto transition-all duration-300 group-hover:bg-purple/20 group-hover:glow-purple group-hover:scale-110 animate-float" style={{animationDelay: '0.5s'}}>
+                <div className="w-16 h-16 rounded-full bg-purple/10 flex items-center justify-center mx-auto transition-all duration-300 group-hover:bg-purple/20 group-hover:glow-purple group-hover:scale-110">
                   <Sparkles className="h-8 w-8 text-purple" />
                 </div>
                 <h3 className="text-2xl font-semibold text-white">2. Open GPTs</h3>
@@ -75,7 +75,7 @@ export function Home() {
               </div>
 
               <div className="space-y-4 group">
-                <div className="w-16 h-16 rounded-full bg-green/10 flex items-center justify-center mx-auto transition-all duration-300 group-hover:bg-green/20 group-hover:glow-green group-hover:scale-110 animate-float" style={{animationDelay: '1s'}}>
+                <div className="w-16 h-16 rounded-full bg-green/10 flex items-center justify-center mx-auto transition-all duration-300 group-hover:bg-green/20 group-hover:glow-green group-hover:scale-110">
                   <Zap className="h-8 w-8 text-green" />
                 </div>
                 <h3 className="text-2xl font-semibold text-white">3. Get Results</h3>
